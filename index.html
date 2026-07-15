@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Damaris Adhiambo Adoyo — Gender & Social Inclusion, Field Coordination</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7;
+    --bg-alt:#F1EFE9;
+    --ink:#1B1F1C;
+    --ink-soft:#565F58;
+    --line:#DEDACD;
+    --teal:#2C5D53;
+    --teal-deep:#1D4038;
+    --sand:#C9BE9D;
+    --card:#FFFFFF;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Sans 3', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Archivo', sans-serif;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit;}
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;
+    top:0;
+    background:rgba(250,250,247,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    z-index:50;
+  }
+  nav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:64px;
+  }
+  .nav-name{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:0.02em;
+  }
+  .nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink-soft);
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    transition:color .15s ease;
+  }
+  .nav-links a:hover{color:var(--teal);}
+  .nav-cv{
+    display:inline-block;
+    padding:9px 18px;
+    background:var(--teal);
+    color:#fff !important;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    border-radius:var(--radius);
+    letter-spacing:0.02em;
+  }
+  .nav-cv:hover{background:var(--teal-deep);}
+  @media(max-width:760px){
+    .nav-links{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    padding:76px 0 64px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--teal);
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:20px;
+    height:1px;
+    background:var(--teal);
+    display:inline-block;
+  }
+  h1.name{
+    font-size:44px;
+    font-weight:800;
+    line-height:1.08;
+    margin-bottom:14px;
+  }
+  .role-line{
+    font-size:19px;
+    color:var(--teal-deep);
+    font-weight:600;
+    margin-bottom:22px;
+  }
+  .hero-desc{
+    font-size:16.5px;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin-bottom:30px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--teal);
+    color:#fff;
+    text-decoration:none;
+    padding:13px 24px;
+    font-weight:600;
+    font-size:14.5px;
+    border-radius:var(--radius);
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--teal-deep);}
+  .btn-secondary{
+    border:1px solid var(--line);
+    color:var(--ink);
+    text-decoration:none;
+    padding:13px 24px;
+    font-weight:600;
+    font-size:14.5px;
+    border-radius:var(--radius);
+    display:inline-block;
+  }
+  .btn-secondary:hover{border-color:var(--teal);color:var(--teal);}
+
+  .hero-photo-wrap{
+    position:relative;
+  }
+  .hero-photo{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:var(--radius);
+    filter:grayscale(8%);
+  }
+  .photo-tag{
+    position:absolute;
+    bottom:-16px;
+    left:-16px;
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:9px 14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--teal-deep);
+    letter-spacing:0.03em;
+  }
+
+  /* ---------- COORDINATES STRIP (signature element) ---------- */
+  .coords{
+    border-bottom:1px solid var(--line);
+    background:var(--bg-alt);
+    overflow:hidden;
+  }
+  .coords .wrap{
+    display:flex;
+    padding:0;
+  }
+  .coords-track{
+    display:flex;
+    gap:0;
+    width:100%;
+  }
+  .coord-item{
+    flex:1;
+    padding:20px 22px;
+    border-right:1px solid var(--line);
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .coord-item:last-child{border-right:none;}
+  .coord-item .num{
+    font-size:22px;
+    font-weight:500;
+    color:var(--teal-deep);
+    display:block;
+  }
+  .coord-item .lbl{
+    font-size:11px;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    margin-top:4px;
+    display:block;
+  }
+  @media(max-width:760px){
+    .coords-track{flex-wrap:wrap;}
+    .coord-item{flex:1 1 50%;border-bottom:1px solid var(--line);}
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{
+    padding:72px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:40px;
+    gap:20px;
+  }
+  .section-head h2{
+    font-size:28px;
+    font-weight:800;
+  }
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  .lede{
+    max-width:62ch;
+    color:var(--ink-soft);
+    font-size:16px;
+    margin-bottom:36px;
+  }
+
+  /* about */
+  .about-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:48px;
+  }
+  .about-grid p{margin:0 0 16px;color:var(--ink-soft);font-size:16px;}
+  .skills-col .skill-group{margin-bottom:22px;}
+  .skills-col h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--teal);
+    margin-bottom:10px;
+  }
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{
+    font-size:12.5px;
+    padding:6px 12px;
+    background:var(--bg-alt);
+    border:1px solid var(--line);
+    border-radius:20px;
+    color:var(--ink);
+  }
+
+  /* experience timeline */
+  .timeline{
+    display:flex;
+    flex-direction:column;
+  }
+  .job{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:28px;
+    padding:28px 0;
+    border-top:1px solid var(--line);
+  }
+  .job:first-child{border-top:1px solid var(--line);}
+  .job-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    padding-top:3px;
+  }
+  .job-title{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:2px;
+  }
+  .job-org{
+    font-size:14.5px;
+    color:var(--teal-deep);
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .job-loc{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .job ul{
+    margin:0;
+    padding-left:18px;
+    color:var(--ink-soft);
+    font-size:15px;
+  }
+  .job li{margin-bottom:8px;}
+  .job li::marker{color:var(--teal);}
+
+  /* projects */
+  .proj-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .proj-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:26px 24px;
+    border-radius:var(--radius);
+  }
+  .proj-card .proj-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--teal);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    margin-bottom:12px;
+    display:block;
+  }
+  .proj-card h3{
+    font-size:17px;
+    margin-bottom:10px;
+    line-height:1.3;
+  }
+  .proj-card p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  @media(max-width:820px){
+    .proj-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .job{grid-template-columns:1fr;gap:6px;}
+  }
+
+  /* education */
+  .edu-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+  }
+  .edu-card h3{font-size:16.5px;margin-bottom:4px;}
+  .edu-card .edu-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+    display:block;
+  }
+  .cert-list{
+    columns:2;
+    column-gap:28px;
+    list-style:none;
+    padding:0;
+    margin:36px 0 0;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .cert-list li{
+    margin-bottom:10px;
+    padding-left:16px;
+    position:relative;
+    break-inside:avoid;
+  }
+  .cert-list li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color:var(--teal);
+  }
+  @media(max-width:640px){
+    .edu-grid{grid-template-columns:1fr;}
+    .cert-list{columns:1;}
+  }
+
+  /* contact / footer */
+  footer{
+    padding:64px 0 48px;
+  }
+  .contact-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:32px;
+  }
+  footer h2{
+    font-size:30px;
+    font-weight:800;
+    max-width:14ch;
+    margin-bottom:18px;
+  }
+  .contact-list{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+  }
+  .contact-list a{text-decoration:none;}
+  .contact-list a:hover{color:var(--teal);}
+  .foot-note{
+    margin-top:56px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="nav-name">DAMARIS ADHIAMBO ADOYO</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cv" href="assets/Damaris_Adoyo_CV_ILRI.pdf" target="_blank" rel="noopener">Download CV</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Field Coordination · Gender & Social Inclusion</div>
+        <h1 class="name">Damaris Adhiambo Adoyo</h1>
+        <div class="role-line">Coordinating inclusive research across livestock, fisheries & livelihood systems</div>
+        <p class="hero-desc">I run field programmes that put gender and social inclusion at the centre — from adolescent-mother empowerment in Malawi and Burkina Faso, to gender-disaggregated fisheries research on Kenya's coast. Three-plus years turning stakeholder engagement, sex-disaggregated data, and community trust into evidence that shapes better livelihood interventions.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="assets/Damaris_Adoyo_CV_ILRI.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn-secondary" href="#experience">See my field experience</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="assets/headshot.png" alt="Portrait of Damaris Adhiambo Adoyo">
+        <div class="photo-tag">KILIFI, KENYA</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="coords">
+  <div class="wrap">
+    <div class="coords-track">
+      <div class="coord-item">
+        <span class="num">3+</span>
+        <span class="lbl">Years field coordination</span>
+      </div>
+      <div class="coord-item">
+        <span class="num">3</span>
+        <span class="lbl">Countries — KE / MW / BF</span>
+      </div>
+      <div class="coord-item">
+        <span class="num">6+</span>
+        <span class="lbl">Counties & field sites led</span>
+      </div>
+      <div class="coord-item">
+        <span class="num">4</span>
+        <span class="lbl">Population groups reached — women, men, youth, PWDs</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About</h2>
+      <span class="section-tag">01 / Background</span>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>My work sits at the intersection of gender, natural resources and livelihoods. I coordinate field activities that engage communities directly — designing tools that capture how women, men, youth and persons with disabilities experience the same intervention differently, and translating that into programming that actually reaches them.</p>
+        <p>That's meant leading research coordination for adolescent mothers rebuilding their lives after early pregnancy in Burkina Faso and Malawi — through skills training, conditional cash transfers for school re-entry and childcare, and livestock-based economic empowerment. It's also meant working with artisanal fishing communities and Beach Management Units along Kenya's coast to understand gendered post-harvest losses, and convening county leadership on the social impact of new energy and livestock infrastructure.</p>
+        <p>Across every project, the throughline is the same: get close enough to a community to collect data that's actually true, then turn it into something that changes how a programme is designed.</p>
+      </div>
+      <div class="skills-col">
+        <div class="skill-group">
+          <h4>Core Competencies</h4>
+          <div class="chip-row">
+            <span class="chip">Field coordination</span>
+            <span class="chip">Gender-responsive design</span>
+            <span class="chip">Stakeholder engagement</span>
+            <span class="chip">Sex-disaggregated data</span>
+            <span class="chip">M&E & reporting</span>
+            <span class="chip">Capacity building</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Tools & Methods</h4>
+          <div class="chip-row">
+            <span class="chip">SurveyCTO</span>
+            <span class="chip">NVivo</span>
+            <span class="chip">Atlas.ti</span>
+            <span class="chip">R</span>
+            <span class="chip">Python</span>
+            <span class="chip">Nesstar Publisher</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <span class="section-tag">02 / Field record</span>
+    </div>
+    <p class="lede">A chronological record of field coordination roles across fisheries, livestock, environmental and public health programming.</p>
+    <div class="timeline">
+
+      <div class="job">
+        <div class="job-date mono">Aug 2024 — Present</div>
+        <div>
+          <div class="job-title">Research Assistant — Field Coordinator</div>
+          <div class="job-org">Pwani University · AABS WorldFish Project</div>
+          <div class="job-loc">Kilifi, Kenya</div>
+          <ul>
+            <li>Coordinate field data collection on gender-disaggregated post-harvest losses for men, women, youth and persons with disabilities across the North-East and South-East Monsoon seasons.</li>
+            <li>Engage fisheries stakeholders at national, county and local level, including Beach Management Unit heads, to strengthen collaboration and inclusive participation.</li>
+            <li>Design gender-sensitive data collection tools using an intersectionality lens, and build partner capacity on gender-sensitive practice.</li>
+            <li>Coordinate a related Integrated Multi-Trophic Aquaculture project assessing feasibility and sustainability with coastal communities, documenting their preference for livestock keeping over mariculture.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-date mono">Jun — Dec 2024</div>
+        <div>
+          <div class="job-title">Research Intern — Field Coordination</div>
+          <div class="job-org">African Population and Health Research Center (APHRC) · PROMOTE Project</div>
+          <div class="job-loc">Ouagadougou, Burkina Faso & Malawi</div>
+          <ul>
+            <li>Led field-level coordination of research empowering adolescent mothers through skills training, conditional cash transfers for school re-entry and childcare, and livestock-linked economic empowerment.</li>
+            <li>Developed the research protocol and qualitative tools for the gender equality and social inclusion component of the study.</li>
+            <li>Engaged local stakeholders and partner organisations across two countries to plan and implement field activities.</li>
+            <li>Co-designed the Adolescent Mothers Empowerment Manual used to guide programme delivery.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-date mono">May 2023 — May 2024</div>
+        <div>
+          <div class="job-title">Environmental Impact Assessment Assistant</div>
+          <div class="job-org">H2 Atlas Africa</div>
+          <div class="job-loc">Taita Taveta, Kenya</div>
+          <ul>
+            <li>Supported feasibility assessment of a 40 MWh green hydrogen plant intended to support large-scale livestock rearing and farming in the county.</li>
+            <li>Coordinated and convened a high-level stakeholder meeting chaired by the Governor of Taita Taveta.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-date mono">Jan — Dec 2022</div>
+        <div>
+          <div class="job-title">Research Assistant</div>
+          <div class="job-org">Pre-SEED Ventures (with AWEMAC)</div>
+          <div class="job-loc">Kilifi, Kenya</div>
+          <ul>
+            <li>Contributed to Environmental and Social Impact Assessments spanning large-scale cattle rearing, energy and agricultural sector developments.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-date mono">2019 — 2021</div>
+        <div>
+          <div class="job-title">Public Health & Veterinary Field Roles</div>
+          <div class="job-org">Vipingo Health Centre · Athi River Sub-County Hospital · Kenya Red Cross</div>
+          <div class="job-loc">Machakos & Migori Counties, Kenya</div>
+          <ul>
+            <li>Conducted weekly meat inspection and bovine disease screening in local slaughterhouses, applying condemnation procedures under the Public Health Act (Cap. 242).</li>
+            <li>Supported community public health outreach and volunteer coordination.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected Projects</h2>
+      <span class="section-tag">03 / Impact areas</span>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <span class="proj-tag">Gender · Livelihoods</span>
+        <h3>Adolescent mothers' empowerment — PROMOTE</h3>
+        <p>Field coordination across Burkina Faso and Malawi delivering skills training, conditional cash transfers, and livestock-based empowerment for young mothers re-entering school and building income.</p>
+      </div>
+      <div class="proj-card">
+        <span class="proj-tag">Fisheries · Gender data</span>
+        <h3>Bluetech Superhighway — WorldFish/Pwani University</h3>
+        <p>Coordinated sex-disaggregated data collection across two monsoon seasons to reduce post-harvest losses among artisanal fishers, engaging BMUs and county stakeholders.</p>
+      </div>
+      <div class="proj-card">
+        <span class="proj-tag">Aquaculture · Feasibility</span>
+        <h3>Integrated Multi-Trophic Aquaculture</h3>
+        <p>Worked with coastal communities to test the cost-efficiency and sustainability of IMTA, surfacing why livestock keeping remains the preferred livelihood strategy.</p>
+      </div>
+      <div class="proj-card">
+        <span class="proj-tag">Energy · Stakeholder engagement</span>
+        <h3>H2 Atlas Africa — Taita Taveta</h3>
+        <p>Supported feasibility work on a 40 MWh green hydrogen plant and convened county leadership, including the Governor, on community impact.</p>
+      </div>
+      <div class="proj-card">
+        <span class="proj-tag">Environmental & social</span>
+        <h3>ESIA — Pre-SEED & AWEMAC</h3>
+        <p>Contributed to environmental and social impact assessments spanning large-scale cattle rearing, energy and agricultural developments.</p>
+      </div>
+      <div class="proj-card">
+        <span class="proj-tag">Public health</span>
+        <h3>Meat inspection & disease surveillance</h3>
+        <p>Weekly slaughterhouse and livestock-pen inspection for bovine disease, applying statutory condemnation procedures to safeguard wholesome meat supply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Education & Training</h2>
+      <span class="section-tag">04 / Foundations</span>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <span class="edu-date mono">Sept 2023 — 2026 (Expected)</span>
+        <h3>MSc, Environmental Studies (Community Development)</h3>
+        <p style="color:var(--ink-soft);font-size:14.5px;margin:0;">Pwani University, Kenya</p>
+      </div>
+      <div class="edu-card">
+        <span class="edu-date mono">Sept 2017 — May 2022</span>
+        <h3>BSc, Environmental Health</h3>
+        <p style="color:var(--ink-soft);font-size:14.5px;margin:0;">Pwani University, Kenya</p>
+      </div>
+    </div>
+    <ul class="cert-list">
+      <li>Gender Equality and Social Inclusion Training — WorldFish</li>
+      <li>Gender Analysis Research Training — KMFRI</li>
+      <li>Certificate in Violence Against Girls and Women Research in Africa</li>
+      <li>Quantitative Data Analysis using R — APHRC</li>
+      <li>Qualitative Data Analysis using NVivo — APHRC</li>
+      <li>Atlas.ti Training for Qualitative Research — Pwani University</li>
+      <li>Manuscript Writing Training — APHRC</li>
+      <li>Grant Proposal Writing — APHRC</li>
+      <li>Data Quality Assurance and Management — APHRC</li>
+      <li>Environmental Impact Assessment — Pre-Seed Consultancy</li>
+    </ul>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <h2>Let's talk about field coordination.</h2>
+      <div class="contact-list">
+        <a href="mailto:damarisadhiambo98@gmail.com">damarisadhiambo98@gmail.com</a>
+        <a href="tel:+254706712373">+254 706 712 373</a>
+        <span>Kilifi, Kenya</span>
+        <a href="https://linkedin.com/in/damaris" target="_blank" rel="noopener">linkedin.com/in/damaris</a>
+      </div>
+    </div>
+    <div class="foot-note mono">Damaris Adhiambo Adoyo — Gender & Social Inclusion, Field Coordination</div>
+  </div>
+</footer>
+
+</body>
+</html>
